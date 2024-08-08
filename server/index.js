@@ -8,7 +8,11 @@ const path = require('path');
 const app = express();
 
 app.use(cors({
-     origin:"http://localhost:3000"
+  "origin": "http://localhost:3000",
+  "methods": "GET,HEAD,PUT,PATCH,POST,DELETE",
+  "credentials": "true",
+  "preflightContinue": false,
+  "optionsSuccessStatus": 204
 }));
 
 dotEnv.config();
